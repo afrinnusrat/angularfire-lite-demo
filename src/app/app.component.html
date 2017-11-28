@@ -1,2 +1,7 @@
-<button (click)="loginUser()">Login</button>
-<h1>{{hello | async}}</h1>
+<span>realtime database </span><h1>{{databaseData}}</h1>
+
+<span>firestore database</span><h1>{{firestoreData?.hellofield }}</h1>
+
+<span>I am logged in?</span><h1>{{ authState }}</h1>
+
+<button (click)="login()">login</button>
