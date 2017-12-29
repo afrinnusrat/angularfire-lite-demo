@@ -1,7 +1,33 @@
-<span>realtime database </span><h1>{{databaseData}}</h1>
+<br>
+<h1>AngularFire Lite Realtime Database</h1>
+<br>
 
-<span>firestore database</span><h1>{{firestoreData?.hellofield }}</h1>
+<span style="color:crimson">realtime database </span><h4>{{databaseData}}</h4>
+<span style="color:crimson">realtime database list of data</span>
+<ul>
+    <li *ngFor="let item of databaseList | async">{{item}}</li>
+</ul>
 
-<span>I am logged in?</span><h1>{{ authState }}</h1>
+<span style="color:crimson">realtime database query</span><h4>{{databaseQuery}}</h4>
+
+
+<br>
+<h1>AngularFire Lite Firestore</h1>
+<br>
+
+<span style="color:crimson">firestore database</span><h4>{{firestoreData?.hellofield }}</h4>
+<span style="color:crimson">firebase database list of data</span>
+<ul>
+    <li *ngFor="let doc of firestoreList | async">{{doc | json}}</li>
+</ul>
+<span style="color:crimson">firestore query</span><h4 *ngFor="let query of firestoreQuery">{{query?.data1}}</h4>
+
+<span style="color:crimson">Transactions and Batched Writes</span><br><h4>open the dev console to see them in action</h4>
+<br>
+<br>
+
+<span>I am logged in?</span><h4>{{ authState }}</h4>
 
 <button (click)="login()">login</button>
+
+
